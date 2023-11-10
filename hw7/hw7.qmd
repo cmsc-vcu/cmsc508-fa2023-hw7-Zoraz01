@@ -394,7 +394,7 @@ except Exception as e:
 sql_people_boss_skills = f"""
 SELECT p.first_name, p.last_name, s.name AS skill_name
 FROM people p
-JOIN people_roles pr ON p.id = pr.people_id
+JOIN peopleroles pr ON p.id = pr.people_id
 JOIN roles r ON pr.role_id = r.id
 LEFT JOIN peopleskills ps ON p.id = ps.people_id
 LEFT JOIN skills s ON ps.skills_id = s.id
@@ -419,7 +419,7 @@ except Exception as e:
 sql_unused_roles = f"""
 SELECT r.id, r.name
 FROM roles r
-LEFT JOIN people_roles pr ON r.id = pr.role_id
+LEFT JOIN peopleroles pr ON r.id = pr.role_id
 WHERE pr.role_id IS NULL;
 """
 

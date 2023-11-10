@@ -3410,7 +3410,7 @@ z-index: 1000;
 <p>The <em>people</em> table contains elements that describe people for the pursposes of this database. This includes their names, emails, linkedins, headshots, discords, bios, and the date they joined.</p>
 <p>Below is a list of data in the <em>people</em> table.</p>
 <div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="169">
+<div class="cell-output cell-output-display" data-execution_count="185">
 <div>
 
 
@@ -4104,21 +4104,44 @@ z-index: 1000;
 <h3 class="anchored" data-anchor-id="list-people-names-and-skill-names-with-the-boss-role">List people names and skill names with the BOSS role</h3>
 <div class="cell" data-execution_count="15">
 <div class="cell-output cell-output-stdout">
-<pre><code>An error occurred while querying People with &#39;BOSS&#39; Role and Their Skills:
+<pre><code>People with &#39;BOSS&#39; Role and Their Skills:</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
 
-(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_users_haseebz.people_roles&#39; doesn&#39;t exist&quot;)
-[SQL: 
-SELECT p.first_name, p.last_name, s.name AS skill_name
-FROM people p
-JOIN people_roles pr ON p.id = pr.people_id
-JOIN roles r ON pr.role_id = r.id
-LEFT JOIN peopleskills ps ON p.id = ps.people_id
-LEFT JOIN skills s ON ps.skills_id = s.id
-WHERE r.name = &#39;BOSS&#39;;
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
 
-Ignoring and moving on.</code></pre>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">first_name</th>
+<th data-quarto-table-cell-role="th">last_name</th>
+<th data-quarto-table-cell-role="th">skill_name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Emma</td>
+<td>Person 2</td>
+<td>Web Development</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Emma</td>
+<td>Person 2</td>
+<td>Cloud Computing</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Emma</td>
+<td>Person 2</td>
+<td>Cybersecurity</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 </section>
@@ -4126,18 +4149,25 @@ Ignoring and moving on.</code></pre>
 <h3 class="anchored" data-anchor-id="list-ids-and-names-of-unused-roles">List ids and names of unused roles</h3>
 <div class="cell" data-execution_count="16">
 <div class="cell-output cell-output-stdout">
-<pre><code>An error occurred while querying Unused Roles:
+<pre><code>Unused Roles:</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
 
-(pymysql.err.ProgrammingError) (1146, &quot;Table &#39;23FA_users_haseebz.people_roles&#39; doesn&#39;t exist&quot;)
-[SQL: 
-SELECT r.id, r.name
-FROM roles r
-LEFT JOIN people_roles pr ON r.id = pr.role_id
-WHERE pr.role_id IS NULL;
-]
-(Background on this error at: https://sqlalche.me/e/20/f405)
 
-Ignoring and moving on.</code></pre>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">name</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div>
 </div>
 </div>
 </section>
