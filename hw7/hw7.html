@@ -3341,6 +3341,14 @@ z-index: 1000;
 
 <p>This document provides a comprehensive overview of a database project. It includes setup and configuration instructions for Python and SQL, detailed descriptions of the database schema, and examples of data from various tables like people, skills, and roles. The document also features a series of sample SQL queries executed in Python to demonstrate interactions with the database, such as retrieving specific skills, roles, and employee information. This is complemented by an Entity-Relationship (ER) diagram illustrating the database structure and relationships. There is also a reflection at the end.</p>
 <p>GITHUB URL: <a href="https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-Zoraz01" class="uri">https://github.com/cmsc-vcu/cmsc508-fa2023-hw7-Zoraz01</a></p>
+<div class="cell" data-execution_count="4">
+<div class="cell-output cell-output-stdout">
+<pre><code>Database/SQL Error:
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+</code></pre>
+</div>
+</div>
 <section id="overview-and-description" class="level2">
 <h2 class="anchored" data-anchor-id="overview-and-description">Overview and description</h2>
 <p>The project involves designing and implementing a comprehensive database to capture the collective skills, certifications, and roles of employees in a company guided by a renowned sensei. This database is envisioned as a pivotal tool for showcasing the company’s expertise and identifying skill gaps, thus aiding in strategic planning and personnel deployment.</p>
@@ -3410,7 +3418,15 @@ z-index: 1000;
 <p>The <em>people</em> table contains elements that describe people for the pursposes of this database. This includes their names, emails, linkedins, headshots, discords, bios, and the date they joined.</p>
 <p>Below is a list of data in the <em>people</em> table.</p>
 <div class="cell" data-execution_count="5">
-<div class="cell-output cell-output-display" data-execution_count="185">
+<div class="cell-output cell-output-stdout">
+<pre><code>An error occurred:
+
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+Ignoring and moving on.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -3418,138 +3434,9 @@ z-index: 1000;
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">first_name</th>
-<th data-quarto-table-cell-role="th">last_name</th>
-<th data-quarto-table-cell-role="th">email</th>
-<th data-quarto-table-cell-role="th">linkedin_url</th>
-<th data-quarto-table-cell-role="th">headshot_url</th>
-<th data-quarto-table-cell-role="th">discord_handle</th>
-<th data-quarto-table-cell-role="th">brief_bio</th>
-<th data-quarto-table-cell-role="th">date_joined</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>John</td>
-<td>Person 1</td>
-<td>john@email.com</td>
-<td>http://linkedin.com/in/john1</td>
-<td>http://example.com/headshot1.jpg</td>
-<td>john_discord</td>
-<td>Bio of John</td>
-<td>2023-01-01</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>2</td>
-<td>Emma</td>
-<td>Person 2</td>
-<td>emma@email.com</td>
-<td>http://linkedin.com/in/emma2</td>
-<td>http://example.com/headshot2.jpg</td>
-<td>emma_discord</td>
-<td>Bio of Emma</td>
-<td>2023-02-01</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>Alex</td>
-<td>Person 3</td>
-<td>alex@email.com</td>
-<td>http://linkedin.com/in/alex3</td>
-<td>http://example.com/headshot3.jpg</td>
-<td>alex_discord</td>
-<td>Bio of Alex</td>
-<td>2023-03-01</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>4</td>
-<td>Sara</td>
-<td>Person 4</td>
-<td>sara@email.com</td>
-<td>http://linkedin.com/in/sara4</td>
-<td>http://example.com/headshot4.jpg</td>
-<td>sara_discord</td>
-<td>Bio of Sara</td>
-<td>2023-04-01</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5</td>
-<td>David</td>
-<td>Person 5</td>
-<td>david@email.com</td>
-<td>http://linkedin.com/in/david5</td>
-<td>http://example.com/headshot5.jpg</td>
-<td>david_discord</td>
-<td>Bio of David</td>
-<td>2023-05-01</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>6</td>
-<td>Lily</td>
-<td>Person 6</td>
-<td>lily@email.com</td>
-<td>http://linkedin.com/in/lily6</td>
-<td>http://example.com/headshot6.jpg</td>
-<td>lily_discord</td>
-<td>Bio of Lily</td>
-<td>2023-06-01</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>7</td>
-<td>Michael</td>
-<td>Person 7</td>
-<td>michael@email.com</td>
-<td>http://linkedin.com/in/michael7</td>
-<td>http://example.com/headshot7.jpg</td>
-<td>michael_discord</td>
-<td>Bio of Michael</td>
-<td>2023-07-01</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>8</td>
-<td>Laura</td>
-<td>Person 8</td>
-<td>laura@email.com</td>
-<td>http://linkedin.com/in/laura8</td>
-<td>http://example.com/headshot8.jpg</td>
-<td>laura_discord</td>
-<td>Bio of Laura</td>
-<td>2023-08-01</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>9</td>
-<td>Robert</td>
-<td>Person 9</td>
-<td>robert@email.com</td>
-<td>http://linkedin.com/in/robert9</td>
-<td>http://example.com/headshot9.jpg</td>
-<td>robert_discord</td>
-<td>Bio of Robert</td>
-<td>2023-09-01</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>10</td>
-<td>Julia</td>
-<td>Person 10</td>
-<td>julia@email.com</td>
-<td>http://linkedin.com/in/julia10</td>
-<td>http://example.com/headshot10.jpg</td>
-<td>julia_discord</td>
-<td>Bio of Julia</td>
-<td>2023-10-01</td>
-</tr>
 </tbody>
 </table>
 
@@ -3563,101 +3450,12 @@ z-index: 1000;
 <p>Below is a list of data in the <em>skills</em> table.</p>
 <div class="cell" data-execution_count="6">
 <div class="cell-output cell-output-stdout">
-<pre><code>Skills Table:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying the Skills table:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">name</th>
-<th data-quarto-table-cell-role="th">description</th>
-<th data-quarto-table-cell-role="th">tag</th>
-<th data-quarto-table-cell-role="th">url</th>
-<th data-quarto-table-cell-role="th">time_commitment</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>Data Analysis</td>
-<td>Interpreting complex datasets to provide insig...</td>
-<td>Skill 1</td>
-<td>http://example.com/data-analysis</td>
-<td>6 months</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>2</td>
-<td>Machine Learning</td>
-<td>Designing and implementing algorithms that can...</td>
-<td>Skill 2</td>
-<td>http://example.com/machine-learning</td>
-<td>1 year</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>Web Development</td>
-<td>Building and maintaining websites, including w...</td>
-<td>Skill 3</td>
-<td>http://example.com/web-development</td>
-<td>3 months</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>4</td>
-<td>Cloud Computing</td>
-<td>Delivering different services through the Inte...</td>
-<td>Skill 4</td>
-<td>http://example.com/cloud-computing</td>
-<td>8 months</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5</td>
-<td>Cybersecurity</td>
-<td>Protecting systems, networks, and programs fro...</td>
-<td>Skill 5</td>
-<td>http://example.com/cybersecurity</td>
-<td>5 months</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>6</td>
-<td>Blockchain Technology</td>
-<td>Creating and managing a continuously growing l...</td>
-<td>Skill 6</td>
-<td>http://example.com/blockchain</td>
-<td>1.5 years</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>7</td>
-<td>Internet of Things</td>
-<td>Developing connected devices that can collect ...</td>
-<td>Skill 7</td>
-<td>http://example.com/iot</td>
-<td>4 months</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>8</td>
-<td>Artificial Intelligence</td>
-<td>Simulating human intelligence in machines prog...</td>
-<td>Skill 8</td>
-<td>http://example.com/ai</td>
-<td>2 years</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -3667,62 +3465,12 @@ z-index: 1000;
 <p>Below is a list of data in the <em>roles</em> table.</p>
 <div class="cell" data-execution_count="7">
 <div class="cell-output cell-output-stdout">
-<pre><code>Roles Table:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying the Roles table:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">name</th>
-<th data-quarto-table-cell-role="th">sort_priority</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1</td>
-<td>Designer</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>2</td>
-<td>Developer</td>
-<td>20</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>3</td>
-<td>Recruit</td>
-<td>30</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>4</td>
-<td>Team Lead</td>
-<td>40</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5</td>
-<td>Boss</td>
-<td>50</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>6</td>
-<td>Mentor</td>
-<td>60</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -3735,160 +3483,24 @@ z-index: 1000;
 <h1>List skill names, tags, and descriptions ordered by name</h1>
 <div class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
-<pre><code>Skills Ordered by Name:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying the Skills table:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">name</th>
-<th data-quarto-table-cell-role="th">tag</th>
-<th data-quarto-table-cell-role="th">description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Artificial Intelligence</td>
-<td>Skill 8</td>
-<td>Simulating human intelligence in machines prog...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Blockchain Technology</td>
-<td>Skill 6</td>
-<td>Creating and managing a continuously growing l...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Cloud Computing</td>
-<td>Skill 4</td>
-<td>Delivering different services through the Inte...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Cybersecurity</td>
-<td>Skill 5</td>
-<td>Protecting systems, networks, and programs fro...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Data Analysis</td>
-<td>Skill 1</td>
-<td>Interpreting complex datasets to provide insig...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>Internet of Things</td>
-<td>Skill 7</td>
-<td>Developing connected devices that can collect ...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>Machine Learning</td>
-<td>Skill 2</td>
-<td>Designing and implementing algorithms that can...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>Web Development</td>
-<td>Skill 3</td>
-<td>Building and maintaining websites, including w...</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 <section id="list-people-names-and-email-addresses-ordered-by-last_name" class="level3">
 <h3 class="anchored" data-anchor-id="list-people-names-and-email-addresses-ordered-by-last_name">List people names and email addresses ordered by last_name</h3>
 <div class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
-<pre><code>People Ordered by Last Name:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying the People table:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">first_name</th>
-<th data-quarto-table-cell-role="th">last_name</th>
-<th data-quarto-table-cell-role="th">email</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>John</td>
-<td>Person 1</td>
-<td>john@email.com</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Julia</td>
-<td>Person 10</td>
-<td>julia@email.com</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Emma</td>
-<td>Person 2</td>
-<td>emma@email.com</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Alex</td>
-<td>Person 3</td>
-<td>alex@email.com</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Sara</td>
-<td>Person 4</td>
-<td>sara@email.com</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>David</td>
-<td>Person 5</td>
-<td>david@email.com</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>Lily</td>
-<td>Person 6</td>
-<td>lily@email.com</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>Michael</td>
-<td>Person 7</td>
-<td>michael@email.com</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>Laura</td>
-<td>Person 8</td>
-<td>laura@email.com</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>Robert</td>
-<td>Person 9</td>
-<td>robert@email.com</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -3896,36 +3508,12 @@ z-index: 1000;
 <h3 class="anchored" data-anchor-id="list-skill-names-of-person-1">List skill names of Person 1</h3>
 <div class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
-<pre><code>Skills of Person 1:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying the Skills of Person 1:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Data Analysis</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Web Development</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Blockchain Technology</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -3933,50 +3521,12 @@ z-index: 1000;
 <h3 class="anchored" data-anchor-id="list-people-names-with-skill-6">List people names with Skill 6</h3>
 <div class="cell" data-execution_count="11">
 <div class="cell-output cell-output-stdout">
-<pre><code>People with Skill 6:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying People with Skill 6:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">first_name</th>
-<th data-quarto-table-cell-role="th">last_name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>John</td>
-<td>Person 1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>David</td>
-<td>Person 5</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Michael</td>
-<td>Person 7</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Laura</td>
-<td>Person 8</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Robert</td>
-<td>Person 9</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -3984,50 +3534,12 @@ z-index: 1000;
 <h3 class="anchored" data-anchor-id="list-people-with-a-developer-role">List people with a DEVELOPER role</h3>
 <div class="cell" data-execution_count="12">
 <div class="cell-output cell-output-stdout">
-<pre><code>People with DEVELOPER Role:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying People with DEVELOPER Role:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">first_name</th>
-<th data-quarto-table-cell-role="th">last_name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>John</td>
-<td>Person 1</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Alex</td>
-<td>Person 3</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Lily</td>
-<td>Person 6</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Robert</td>
-<td>Person 9</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Julia</td>
-<td>Person 10</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -4035,32 +3547,12 @@ z-index: 1000;
 <h3 class="anchored" data-anchor-id="list-names-and-email-addresses-of-people-without-skills">List names and email addresses of people without skills</h3>
 <div class="cell" data-execution_count="13">
 <div class="cell-output cell-output-stdout">
-<pre><code>People Without Skills:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying People Without Skills:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">first_name</th>
-<th data-quarto-table-cell-role="th">last_name</th>
-<th data-quarto-table-cell-role="th">email</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Sara</td>
-<td>Person 4</td>
-<td>sara@email.com</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -4068,35 +3560,12 @@ z-index: 1000;
 <h3 class="anchored" data-anchor-id="list-names-and-tags-of-unused-skills">List names and tags of unused skills</h3>
 <div class="cell" data-execution_count="14">
 <div class="cell-output cell-output-stdout">
-<pre><code>Unused Skills:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying Unused Skills:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">name</th>
-<th data-quarto-table-cell-role="th">tag</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Internet of Things</td>
-<td>Skill 7</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Artificial Intelligence</td>
-<td>Skill 8</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -4104,44 +3573,12 @@ z-index: 1000;
 <h3 class="anchored" data-anchor-id="list-people-names-and-skill-names-with-the-boss-role">List people names and skill names with the BOSS role</h3>
 <div class="cell" data-execution_count="15">
 <div class="cell-output cell-output-stdout">
-<pre><code>People with &#39;BOSS&#39; Role and Their Skills:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying People with &#39;BOSS&#39; Role and Their Skills:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">first_name</th>
-<th data-quarto-table-cell-role="th">last_name</th>
-<th data-quarto-table-cell-role="th">skill_name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Emma</td>
-<td>Person 2</td>
-<td>Web Development</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Emma</td>
-<td>Person 2</td>
-<td>Cloud Computing</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Emma</td>
-<td>Person 2</td>
-<td>Cybersecurity</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
@@ -4149,25 +3586,12 @@ z-index: 1000;
 <h3 class="anchored" data-anchor-id="list-ids-and-names-of-unused-roles">List ids and names of unused roles</h3>
 <div class="cell" data-execution_count="16">
 <div class="cell-output cell-output-stdout">
-<pre><code>Unused Roles:</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
+<pre><code>An error occurred while querying Unused Roles:
 
+(pymysql.err.OperationalError) (1044, &quot;Access denied for user &#39;23FA_haseebz&#39;@&#39;%&#39; to database &#39;BLO&#39;&quot;)
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">id</th>
-<th data-quarto-table-cell-role="th">name</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
-</div>
+Ignoring and moving on.</code></pre>
 </div>
 </div>
 </section>
